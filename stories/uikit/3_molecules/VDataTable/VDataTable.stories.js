@@ -1,6 +1,7 @@
 import { VDataTable } from "vuetify/components";
 import VDataTableCRUD from "./VDataTable-CRUD.js";
 import VDataTableSimple from "./VDataTable-simple.js";
+import VDataTableExpanded from "./VDataTable-expanded.js";
 
 export default {
   title: "uikit/3_molecules/VDataTable/VDataTable",
@@ -2136,3 +2137,4 @@ export const Default = {
 
 export const CRUD = VDataTableCRUD;
 export const Simple = VDataTableSimple;
+export const Expanded = VDataTableExpanded;
