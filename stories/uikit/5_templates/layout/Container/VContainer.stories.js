@@ -3,7 +3,6 @@ import dashboarCardsConfig from "./dashboarCards.js"
   export default {
     title: 'uikit/5_templates/layout/Container/VContainer',
     component: VContainer,
-    tags: ['autodocs'], 
     parameters: {
       docs: {
         description: {
