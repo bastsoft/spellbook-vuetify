@@ -17,23 +17,27 @@ export default {
     prefix: "ItemModel.borower",
     items: JSON.stringify([
       {
-        "borrower": null,
-        "borrowerId": "",
-        "createdAt": "2024-06-11T13:51:36.822303Z",
-        "credit": null,
-        "creditId": "01J03S32BJEA5Y8A64XE26CJD2",
-        "deletedAt": null,
-        "dpd": "0",
-        "factEndsAt": "0001-01-01T00:00:00Z",
-        "id": "01J03S32BP2NJMHCCBGZ9JMPT5",
-        "period": "1",
-        "planEndsAt": "2024-08-09T21:00:00Z",
-        "product": null,
-        "productId": "",
-        "startAt": "2024-07-10T21:00:00Z",
-        "state": "active",
-        "status": "opened",
-        "updatedAt": "2024-06-11T13:51:36.822303Z"
+        "createdAt": "2024-07-17T15:10:52.863778Z",
+        "credit": {
+            "guid": "624d6beb-3c51-4bb3-9ab2-958d68fa3346",
+            "id": "01J30KY2HQ0H6609E146MXZS37"
+        },
+        "federation": {
+            "country": "Russia",
+            "type": "installment"
+        },
+        "guid": "b22c2798-3e29-41ca-afc4-fd4392e71995",
+        "id": "01J30KY2XB1ETJYB7Y69S7T9C0",
+        "model": {
+            "guid": "b2cbc279-0692-4cc5-b904-7dddbfad0f37",
+            "id": "01HTM5B59HA26ET2Q914ECY78W",
+            "name": "name model",
+            "type": "type model"
+        },
+        "offer": "[]",
+        "state": "pending",
+        "type": "type",
+        "updatedAt": "2024-07-17T15:10:52.863778Z"
       }
     ])
   },
@@ -48,12 +52,24 @@ export default {
     
     if(!args.headers && item){
       Object.keys(item).forEach(key => {
-        headers.push({ 
-          title: key, 
-          key: key,
-          sortable: false
-        });
+        if(typeof(item[key]) === 'object' && !Array.isArray(item[key])){
+          Object.keys(item[key]).forEach(key2 => {
+            headers.push({ 
+              title: `${key}.${key2}`, 
+              key: `${key}.${key2}`,
+              sortable: false
+            });
+          });
+        }else{
+          headers.push({ 
+            title: key, 
+            key: key,
+            sortable: false
+          });
+        }
+
       });
+      
     }else{
       headers = new Function(`return ${args.headers}`)();
     }
