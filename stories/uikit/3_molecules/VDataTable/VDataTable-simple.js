@@ -52,7 +52,8 @@ export default {
     
     if(!args.headers && item){
       Object.keys(item).forEach(key => {
-        if(typeof(item[key]) === 'object' && !Array.isArray(item[key])){
+        if(typeof(item[key]) === 'object' && item[key] !== null && !Array.isArray(item[key])){
+          
           Object.keys(item[key]).forEach(key2 => {
             headers.push({ 
               title: `${key}.${key2}`, 

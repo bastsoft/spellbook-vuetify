@@ -7,15 +7,15 @@ const dashboarCards = {
   argTypes: {
     title: {
       control: "text",
-      description: "title",
+      description: "введите заголовок дашборта",
     },
     prefix: {
       control: "text",
-      description: "namespace",
+      description: "namespace переменных",
     },
     itemModel:{
       control: 'text',
-      description: 'нужно вставить пример item-а карточки'
+      description: 'объект данных который нужно отображать'
     },
   },
   args: {
