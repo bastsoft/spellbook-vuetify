@@ -4,7 +4,9 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "generating-stories": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1  node generating-stories.mjs"
+    "build": "npm run build-storybook && node node_modules/my-spellbook/src/spells-core/build-postprocessing.js",
+    "generating-stories": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1  node generating-stories.mjs",
+    "deploy": "push-dir --dir=storybook-static --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
@@ -25,6 +27,7 @@
     "@vitejs/plugin-vue": "^4.5.0",
     "cross-env": "^7.0.3",
     "pre-commit": "^1.2.2",
+    "push-dir": "^0.4.1",
     "sass": "^1.69.0",
     "storybook": "^8.1.2",
     "unplugin-fonts": "^1.1.0",
