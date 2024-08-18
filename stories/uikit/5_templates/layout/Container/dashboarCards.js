@@ -47,7 +47,7 @@ const dashboarCards = {
           return Array.isArray(itemModel[key][0][key2]) && (itemModel[key][0][key2] || []).length > 0;
         })) || "0";
         const isArrayExpanded = arrayExpandedField !== "0";
-        const isObject = !isArray && typeof itemModel[key] === 'object'; 
+        const isObject = !isArray && typeof itemModel[key] === 'object' && itemModel[key] !== null; 
         const isObjectExpanded = isObject && Object.keys(itemModel[key]).find(key2 => {
           return Array.isArray(itemModel[key][key2]) && itemModel[key][key2].length;
         });
