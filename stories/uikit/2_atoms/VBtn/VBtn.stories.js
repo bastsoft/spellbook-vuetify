@@ -7,7 +7,11 @@ import { VBtn } from 'vuetify/components';
     parameters: {
       docs: {
         description: {
-          component: '[https://vuetifyjs.com/api/v-btn](https://vuetifyjs.com/api/v-btn)'
+          component: `
+[https://vuetifyjs.com/en/components/buttons](https://vuetifyjs.com/en/components/buttons)
+
+[https://vuetifyjs.com/api/v-btn](https://vuetifyjs.com/api/v-btn)
+`
         }
       },
       slots: {
@@ -514,6 +518,17 @@ import { VBtn } from 'vuetify/components';
   }
 },
   }
+
+  export const StandartOnClick = {
+    render: () => ({
+      methods:{
+        onClick(){
+          alert("click");
+        }
+      },
+      template: `<VBtn @click="onClick">Button</VBtn>`
+    })
+  };
   
   export const Clear = {
     render: () => ({
