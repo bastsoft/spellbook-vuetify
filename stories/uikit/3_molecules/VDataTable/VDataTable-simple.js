@@ -53,14 +53,21 @@ export default {
     if(!args.headers && item){
       Object.keys(item).forEach(key => {
         if(typeof(item[key]) === 'object' && item[key] !== null && !Array.isArray(item[key])){
-          
+          const parent = { 
+            title: `${key}`, 
+            align: 'center',
+            children: []
+          };
+
           Object.keys(item[key]).forEach(key2 => {
-            headers.push({ 
+            parent.children.push({ 
               title: `${key}.${key2}`, 
               key: `${key}.${key2}`,
               sortable: false
             });
           });
+
+          headers.push(parent);
         }else{
           headers.push({ 
             title: key, 
