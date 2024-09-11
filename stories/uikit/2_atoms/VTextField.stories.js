@@ -1070,6 +1070,24 @@ import { VTextField } from 'vuetify/components';
 },
   }
   
+  export const Default = {
+    argTypes: {
+      title:{
+        control: 'text',
+        description: 'название поля на английском без пробела',
+      }
+    },
+    args: {
+      title: "Field"
+    },
+    render: (args) => {
+      const component = {};
+      const title = args.title.charAt(0).toUpperCase() + args.title.slice(1);
+      component.data = new Function(`return { "field${title}": ""}`);
+      component.template = `<VTextField v-model="field${title}" label="${title}"></VTextField>`
+      return component;
+    },
+  };
 
   export const VariantOutlined = {
     render: (args) => ({

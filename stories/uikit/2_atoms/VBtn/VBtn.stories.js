@@ -519,15 +519,24 @@ import { VBtn } from 'vuetify/components';
 },
   }
 
-  export const StandartOnClick = {
-    render: () => ({
-      methods:{
-        onClick(){
-          alert("click");
-        }
-      },
-      template: `<VBtn @click="onClick">Button</VBtn>`
-    })
+  export const Default = {
+    argTypes: {
+      title:{
+        control: 'text',
+        description: 'название кнопки на английском без пробела',
+      }
+    },
+    args: {
+      title: "Ok"
+    },
+    render: (args) => {
+      const component = { methods: {} };
+      const title = args.title.charAt(0).toUpperCase() + args.title.slice(1);
+      component.methods[`onClick${args.title}`] = new Function(`alert("${title}");`);
+      component.template = `<VBtn @click="onClick${args.title}">${title}</VBtn>`;
+
+      return component;
+    }
   };
   
   export const Clear = {
