@@ -1,7 +1,7 @@
 import { VDataTableRows } from 'vuetify/components';
   
   export default {
-    title: 'generated-stories/VDataTableRows',
+    title: 'uikit/3_molecules/VDataTable/components/VDataTableRows',
     component: VDataTableRows,
     tags: ['autodocs'], 
     parameters: {

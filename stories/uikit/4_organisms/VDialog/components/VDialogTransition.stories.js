@@ -1,7 +1,7 @@
 import { VDialogTransition } from 'vuetify/components';
   
   export default {
-    title: 'generated-stories/VDialogTransition',
+    title: 'uikit/4_organisms/VDialog/components/VDialogTransition',
     component: VDialogTransition,
     tags: ['autodocs'], 
     parameters: {

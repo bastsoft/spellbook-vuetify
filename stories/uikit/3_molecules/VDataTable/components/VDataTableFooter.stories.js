@@ -1,7 +1,7 @@
 import { VDataTableFooter } from 'vuetify/components';
   
   export default {
-    title: 'generated-stories/VDataTableFooter',
+    title: 'uikit/3_molecules/VDataTable/components/VDataTableFooter',
     component: VDataTableFooter,
     tags: ['autodocs'], 
     parameters: {

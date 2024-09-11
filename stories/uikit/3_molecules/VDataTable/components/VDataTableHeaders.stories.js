@@ -1,7 +1,7 @@
 import { VDataTableHeaders } from 'vuetify/components';
   
   export default {
-    title: 'generated-stories/VDataTableHeaders',
+    title: 'uikit/3_molecules/VDataTable/components/VDataTableHeaders',
     component: VDataTableHeaders,
     tags: ['autodocs'], 
     parameters: {

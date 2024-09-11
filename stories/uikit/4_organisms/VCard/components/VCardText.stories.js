@@ -1,7 +1,7 @@
 import { VCardText } from 'vuetify/components';
   
   export default {
-    title: 'generated-stories/VCardText',
+    title: 'uikit/4_organisms/VCard/components/VCardText',
     component: VCardText,
     tags: ['autodocs'], 
     parameters: {

@@ -1,7 +1,7 @@
 import { VToolbarItems } from 'vuetify/components';
   
   export default {
-    title: 'generated-stories/VToolbarItems',
+    title: 'uikit/4_organisms/VToolbar/components/VToolbarItems',
     component: VToolbarItems,
     tags: ['autodocs'], 
     parameters: {

@@ -1,7 +1,7 @@
 import { VDialogTopTransition } from 'vuetify/components';
   
   export default {
-    title: 'generated-stories/VDialogTopTransition',
+    title: 'uikit/4_organisms/VDialog/components/VDialogTopTransition',
     component: VDialogTopTransition,
     tags: ['autodocs'], 
     parameters: {

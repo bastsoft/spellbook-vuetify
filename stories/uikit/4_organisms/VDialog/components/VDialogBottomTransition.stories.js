@@ -1,7 +1,7 @@
 import { VDialogBottomTransition } from 'vuetify/components';
   
   export default {
-    title: 'generated-stories/VDialogBottomTransition',
+    title: 'uikit/4_organisms/VDialog/components/VDialogBottomTransition',
     component: VDialogBottomTransition,
     tags: ['autodocs'], 
     parameters: {
