@@ -10,7 +10,11 @@ export default {
     },
     itemExpendedKey: {
       control: 'text',
-      description: 'в items какой ключь сделать details, если оставить пустым то будет сгенерирован автоматически'
+      description: 'в items какой ключь сделать details?, может установиться автоматически'
+    },
+    itemValue: {
+      control: 'text',
+      description: 'в itemExpendedKey какое поле использовать как ключь для открытия'
     },
     headers: {
       control: 'text',
@@ -20,6 +24,7 @@ export default {
   args: {
     prefix: "ItemModel.borower",
     itemExpendedKey: "balances",
+    itemValue: "id",
     items: JSON.stringify([
       {
         "balances": [
