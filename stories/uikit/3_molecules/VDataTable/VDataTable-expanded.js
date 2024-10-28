@@ -8,6 +8,10 @@ export default {
       control: 'text',
       description: 'данные для грида'
     },
+    itemExpendedKey: {
+      control: 'text',
+      description: 'в items какой ключь сделать details, если оставить пустым то будет сгенерирован автоматически'
+    },
     headers: {
       control: 'text',
       description: 'Есть уже описание заголовков? если нет будет сформирован автоматически'
@@ -44,10 +48,18 @@ export default {
   render: (args) => {
     const title = args.prefix;
     const items = new Function(`return ${args.items}`)();
-    const itemExpendedKey = args.itemExpendedKey;
+    let itemExpendedKey = args.itemExpendedKey;
     const item = items[0]; 
     
     let headers = [];
+  
+    if(!itemExpendedKey && item){
+      Object.keys(item).forEach(key => {
+        if(Array.isArray(item[key])){
+          itemExpendedKey = key;
+        }
+      });
+    }
 
     //items.push(item);
     
