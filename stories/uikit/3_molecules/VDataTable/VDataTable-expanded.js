@@ -14,7 +14,7 @@ export default {
     },
     itemValue: {
       control: 'text',
-      description: 'в itemExpendedKey какое поле использовать как ключь для открытия'
+      description: 'какое поле использовать как ключь для открытия'
     },
     headers: {
       control: 'text',
@@ -22,31 +22,21 @@ export default {
     }
   },
   args: {
-    prefix: "ItemModel.borower",
-    itemExpendedKey: "balances",
-    itemValue: "id",
+    prefix: "task",
+    itemExpendedKey: "tasks",
+    itemValue: "created_at",
     items: JSON.stringify([
       {
-        "balances": [
-            {
-                "accountId": "",
-                "amount": 0,
-                "amountInit": 7000000,
-                "calculatedAt": "2024-07-11T15:27:31.782890Z",
-                "createdAt": "0001-01-01T00:00:00Z",
-                "id": "01J2H6G8E6APF56VDDBP5WBN4P",
-                "state": "",
-                "type": "debit",
-                "updatedAt": "0001-01-01T00:00:00Z"
-            }
+        "name": "v.24.10.22",
+        "tasks": [
+          {
+            "task": "fix(KR-111):task"
+          }
         ],
-        "borrowerId": "",
-        "createdAt": "0001-01-01T00:00:00Z",
-        "creditId": "01J2H6G6Z3261JJVZ5P5WR15ZN",
-        "id": "01J2H6G8CTDF1QYR31859YB49E",
-        "state": "",
-        "type": "credit_account",
-        "updatedAt": "0001-01-01T00:00:00Z"
+        "web_url": "https://github.com",
+        "author_name": "author_name",
+        "author_email": "author_name@ya.ru",
+        "created_at": "2024-10-22T13:10:38.000Z"
       }
     ])
   },
@@ -74,11 +64,19 @@ export default {
           return;
         }
 
-        headers.push({ 
+        const headerItem = { 
           title: key, 
           key: key,
           sortable: false
-        });
+        };
+
+        const isIsoDate = /\d{4}-\d{2}-\d{2}/.test(item[key]);
+
+        if(isIsoDate){
+          headerItem.xvalue = (item => `${(new Date(item[key])).toLocaleDateString()}`).toString().replace("[key]", `['${key}']`);
+        }
+
+        headers.push(headerItem);
       });
     }else{
       headers = new Function(`return ${args.headers}`)();
